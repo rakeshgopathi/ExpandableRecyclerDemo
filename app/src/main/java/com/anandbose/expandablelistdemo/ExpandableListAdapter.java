@@ -29,22 +29,16 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         float dp = context.getResources().getDisplayMetrics().density;
         int subItemPaddingLeft = (int) (18 * dp);
         int subItemPaddingTopAndBottom = (int) (5 * dp);
+        LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         switch (type) {
             case HEADER:
-                LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 view = inflater.inflate(R.layout.list_header, parent, false);
                 ListHeaderViewHolder header = new ListHeaderViewHolder(view);
                 return header;
             case CHILD:
-                TextView itemTextView = new TextView(context);
-                itemTextView.setPadding(subItemPaddingLeft, subItemPaddingTopAndBottom, 0, subItemPaddingTopAndBottom);
-                itemTextView.setTextColor(0x88000000);
-                itemTextView.setLayoutParams(
-                        new ViewGroup.LayoutParams(
-                                ViewGroup.LayoutParams.MATCH_PARENT,
-                                ViewGroup.LayoutParams.WRAP_CONTENT));
-                return new RecyclerView.ViewHolder(itemTextView) {
-                };
+                view = inflater.inflate(R.layout.child_list_header, parent, false);
+                ListChildViewHolder child_header = new ListChildViewHolder(view);
+                return child_header;
         }
         return null;
     }
@@ -89,7 +83,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 });
                 break;
             case CHILD:
-                TextView itemTextView = (TextView) holder.itemView;
+                TextView itemTextView = ((ListChildViewHolder) holder).header_title;
                 itemTextView.setText(mItemData.get(position).text);
                 break;
         }
@@ -97,7 +91,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemViewType(int position) {
-        return mItemData.get(position).type;
+        return mItemData.get(position).type();
     }
 
     @Override
@@ -117,7 +111,24 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
     }
 
-    public static class Item {
+    private static class ListChildViewHolder extends RecyclerView.ViewHolder {
+        public TextView header_title;
+        public ImageView btn_expand_toggle;
+        public Item refferalItem;
+
+        public ListChildViewHolder(View itemView) {
+            super(itemView);
+            header_title = (TextView) itemView.findViewById(R.id.header_title);
+            btn_expand_toggle = (ImageView) itemView.findViewById(R.id.btn_expand_toggle);
+        }
+    }
+
+    static abstract class ViewModel {
+        abstract int type();
+    }
+
+    //This solution is for Items with different object models.
+    public static class Item extends ViewModel {
         public int type;
         public String text;
         public List<Item> invisibleChildren;
@@ -128,6 +139,11 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         public Item(int type, String text) {
             this.type = type;
             this.text = text;
+        }
+
+        @Override
+        int type() {
+            return type;
         }
     }
 }
