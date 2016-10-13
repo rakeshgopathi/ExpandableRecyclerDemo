@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.2.0_00eae40f68bc66ea4c74b9b963b585edf39f4bac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.2.0_9cf119b9be3597c7cf1bbdc911ef4c643478c6e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-22.2.0_b3ce0e092bc10432f272b282744ed38796d6de77\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="d777effd96cadd7118f9958f1a4056fdf2d2dc08">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0dd4063991add8a70048d090be8dd936245674bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_b19ade851e401dc2d5ff7c6cd2bba3bb7e30601a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.0_e0b0642238f1605b244bf3a104e8c1ce32ff0557\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="c4d88dbd772947552d97947a1ec5795d4ef98fee">
+        <dex dex="C:\Users\Rakesh\Expandable_list_view_implementations\RecyclerViewExpandableListViewDemo\ExpandableListViewDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_30e61b00f919f120ba21fa15f65f4a3a1af0cba3\classes.dex" />
+    </item>
+
+</items>
