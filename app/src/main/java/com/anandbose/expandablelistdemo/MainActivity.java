@@ -4,9 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseArray;
+
+import com.anandbose.expandablelistdemo.ExpandableListAdapter.Item;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import static com.anandbose.expandablelistdemo.ExpandableListAdapter.CHILD;
+import static com.anandbose.expandablelistdemo.ExpandableListAdapter.HEADER;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,26 +23,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        List<ExpandableListAdapter.Item> data = new ArrayList<>();
+        SparseArray<ExpandableListAdapter.Item> data = new SparseArray<>();
+        int i=0;
+        data.setValueAt(i++, new ExpandableListAdapter.Item(HEADER, "Fruits"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(CHILD, "Apple"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(CHILD, "Orange"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(CHILD, "Banana"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(HEADER, "Cars"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(CHILD, "Audi"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(CHILD, "Aston Martin"));
+        data.setValueAt(i++, new ExpandableListAdapter.Item(CHILD, "BMW"));
+        data.setValueAt(i++ ,new ExpandableListAdapter.Item(CHILD, "Cadillac"));
 
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "Fruits"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Apple"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Orange"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Banana"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "Cars"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Audi"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Aston Martin"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "BMW"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Cadillac"));
-
-        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "Places");
+        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(HEADER, "Places");
         places.invisibleChildren = new ArrayList<>();
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Kerala"));
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Tamil Nadu"));
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Karnataka"));
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "Maharashtra"));
+        places.invisibleChildren.add(new Item(CHILD, "Kerala"));
+        places.invisibleChildren.add(new Item(CHILD, "Tamil Nadu"));
+        places.invisibleChildren.add(new Item(CHILD, "Karnataka"));
+        places.invisibleChildren.add(new Item(CHILD, "Maharashtra"));
 
-        data.add(places);
+        data.setValueAt(i, places);
+
 
         recyclerview.setAdapter(new ExpandableListAdapter(data));
     }
